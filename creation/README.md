@@ -22,3 +22,24 @@
 2. Написать SQL-запросы, создающие спроектированную БД. Прислать ссылку на файл, содержащий SQL-запросы.
    
 Примечание: можно прислать сначала схему, получить подтверждение, что схема верная, и после этого браться за написание запросов.
+
+## Ответ 
+
+![image](https://github.com/bezymel/py-homeworks-db/assets/129361495/1b95517c-1fcd-4ba9-b6b8-a6b69856802d)
+
+CREATE TABLE ARTISTS (
+    ID INT PRIMARY KEY,
+    NAME VARCHAR(255)
+);
+
+CREATE TABLE ALBUMS (
+    ID INT PRIMARY KEY,
+    NAME VARCHAR(255),
+    YEAR INT
+);
+
+CREATE TABLE COLLECTIONS (
+    ID INT PRIMARY KEY,
+    NAME VARCHAR(255),
+    YEAR INT
+);
