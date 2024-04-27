@@ -25,21 +25,54 @@
 
 ## Ответ 
 
-![image](https://github.com/bezymel/py-homeworks-db/assets/129361495/1b95517c-1fcd-4ba9-b6b8-a6b69856802d)
+![image](https://github.com/bezymel/py-homeworks-db/assets/129361495/0f2d6d16-2ac2-4477-aeaa-33a21d273c3a)
 
-CREATE TABLE ARTISTS (
-    ID INT PRIMARY KEY,
+
+CREATE TABLE Artists (
+    ID_Artists INT PRIMARY KEY,
     NAME VARCHAR(255)
 );
 
-CREATE TABLE ALBUMS (
-    ID INT PRIMARY KEY,
+CREATE TABLE Albums (
+    ID_Albums INT PRIMARY KEY,
     NAME VARCHAR(255),
     YEAR INT
 );
 
-CREATE TABLE COLLECTIONS (
-    ID INT PRIMARY KEY,
+CREATE TABLE Collections (
+    ID_Collections INT PRIMARY KEY,
     NAME VARCHAR(255),
     YEAR INT
+);
+
+CREATE TABLE Genres (
+    ID_Genres INT PRIMARY KEY,
+    NAME VARCHAR(255)
+);
+
+CREATE TABLE Artists_Genres (
+    ID_Artists INT,
+    ID_Genres INT,
+    FOREIGN KEY (ID_Artists) REFERENCES Artists(ID_Artists),
+    FOREIGN KEY (ID_Genres) REFERENCES Genres(ID_Genres)
+);
+
+CREATE TABLE Artists_Albums (
+    ID_Artists INT,
+    ID_Albums INT,
+    FOREIGN KEY (ID_Artists) REFERENCES Artists(ID_Artists),
+    FOREIGN KEY (ID_Albums) REFERENCES Albums(ID_Albums)
+);
+
+CREATE TABLE Tracks_Collections (
+    ID_Tracks INT,
+    ID_Collections INT,
+    FOREIGN KEY (ID_Tracks) REFERENCES Tracks(ID_Tracks),
+    FOREIGN KEY (ID_Collections) REFERENCES Collections(ID_Collections)
+);
+
+CREATE TABLE Tracks (
+    ID_Tracks INT PRIMARY KEY,
+    NAME VARCHAR(255),
+    DURATION TIME
 );
