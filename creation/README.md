@@ -76,3 +76,10 @@ CREATE TABLE Tracks (
     NAME VARCHAR(255),
     DURATION TIME
 );
+
+ALTER TABLE Tracks
+    ADD COLUMN ID_Albums INT,
+    ADD CONSTRAINT FK_Albums
+    FOREIGN KEY (ID_Albums)
+    REFERENCES Albums(ID_Albums
+);
